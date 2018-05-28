@@ -4,15 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{491F5C90-997E-466A-9E0D-EA9B7B989686}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{7BEB9299-5BA1-46FD-8FFA-0DF9BC021D57}</ProjectGuid>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>VisitorPattern_v1</RootNamespace>
-    <AssemblyName>VisitorPattern_v1</AssemblyName>
+    <RootNamespace>DebugConsole</RootNamespace>
+    <AssemblyName>DebugConsole</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -22,6 +24,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -40,9 +43,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Dto\Contracts.cs" />
-    <Compile Include="Logic\NetWorthCaclulator.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\VisitorPattern_v1\VisitorPattern_v1.csproj">
+      <Project>{491F5C90-997E-466A-9E0D-EA9B7B989686}</Project>
+      <Name>VisitorPattern_v1</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VisitorPattern_v2\VisitorPattern_v2.csproj">
+      <Project>{4649fa0f-edac-4056-8b50-77f57f406561}</Project>
+      <Name>VisitorPattern_v2</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
