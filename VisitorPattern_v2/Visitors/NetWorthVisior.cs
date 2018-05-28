@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using VisitorPattern_v2.Dto;
 using VisitorPattern_v2.Interfaces;
 
-namespace VisitorPattern_v2.Visitor
+namespace VisitorPattern_v2.Visitors
 {
     public class NetWorthVisior : IVisitor
     {
@@ -26,6 +26,26 @@ namespace VisitorPattern_v2.Visitor
         public void Visit(Loan loan)
         {
             Total -= loan.Owed;
+        }
+    }
+
+    public class IncomeVisitor : IVisitor
+    {
+        public double Amount;
+
+        public void Visit(RealEstate realEstate)
+        {
+            Amount += realEstate.MonthlyRent;
+        }
+
+        public void Visit(BankAccount bankAccount)
+        {
+            Amount += bankAccount.Amount*bankAccount.MonthlyInterest;
+        }
+
+        public void Visit(Loan loan)
+        {
+            Amount -= loan.MonthlyPayment;
         }
     }
 }

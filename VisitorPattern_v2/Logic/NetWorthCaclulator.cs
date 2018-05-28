@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using VisitorPattern_v2.Dto;
 using VisitorPattern_v2.Interfaces;
-using VisitorPattern_v2.Visitor;
+using VisitorPattern_v2.Visitors;
 
 namespace VisitorPattern_v2.Logic
 {
@@ -29,6 +29,14 @@ namespace VisitorPattern_v2.Logic
             _person.Accept(networthVisitor);
 
             return networthVisitor.Total;
+        }
+
+        public double CalcIncome()
+        {
+            var incomeVisitor = new IncomeVisitor();
+            _person.Accept(incomeVisitor);
+
+            return incomeVisitor.Amount;
         }
     }
 }

@@ -12,6 +12,8 @@ namespace DebugConsole
         {
             CalcNetworth_V1();
             CalcNetworth_V2();
+            
+
             Console.ReadLine();
 
         }
@@ -28,6 +30,7 @@ namespace DebugConsole
             var calculator = new VisitorPattern_v2.Logic.NetWorthCaclulator();
 
             Console.WriteLine($"Networth (visitor pattern) : {calculator.CalcNetWorth()}");
+            Console.WriteLine($"Monthly income             : {calculator.CalcIncome()}");
         }
     }
 }
